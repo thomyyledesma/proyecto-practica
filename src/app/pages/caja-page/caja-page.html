@@ -1,0 +1,19 @@
+<h2>Movimientos de caja</h2>
+<p>Saldo de caja: {{ saldoCaja() }}</p>
+<ul>
+    @for (mov of movimientos(); track mov.id) {
+    <li>
+        @switch (mov.tipo){
+        @case ('venta') {
+        <span>Venta de {{ mov.cantidad }} unidades - ${{ mov.monto }}</span>
+        }
+        @case ('compra') {
+        <span>Compra de {{ mov.cantidad }} unidades - ${{ mov.monto }}</span>
+        }
+        @case ('ajuste') {
+        <span>Ajuste de stock: {{ mov.cantidad }} unidades</span>
+        }
+        }
+    </li>
+    }
+</ul>

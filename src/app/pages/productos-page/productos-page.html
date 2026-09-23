@@ -1,0 +1,22 @@
+<ul>
+    @for (producto of productos(); track producto.id) {
+    <app-producto-item 
+    [producto]="producto" 
+    (vender)="venderUnidad($event)" 
+    (eliminar)="eliminarProducto($event)" 
+    (seleccionar)="seleccionarProducto($event)"
+    />
+    } @empty {
+    <p>No hay productos cargados.</p>
+    }
+</ul>
+
+@if (productoSeleccionado()){
+    <div class="panel-venta">
+        <h3>Vender: {{ productoSeleccionado()?.nombre }}</h3>
+        <button (click)="decrementarCantidad()">-</button>
+        <span>{{ cantidadAVender() }}</span>
+        <button (click)="incrementarCantidad()">+</button>
+        <button (click)="confirmarVenta()">Confirmar venta</button>
+    </div>
+}
