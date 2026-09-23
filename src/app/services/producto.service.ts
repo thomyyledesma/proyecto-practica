@@ -1,6 +1,5 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { Producto } from '../models/producto.model';
-import { single } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ProductoService {

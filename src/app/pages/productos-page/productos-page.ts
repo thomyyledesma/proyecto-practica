@@ -25,7 +25,7 @@ cantidadAVender = linkedSignal(() => {
 
 seleccionarProducto(id: number): void { this.productoSeleccionadoId.set(id); }
 incrementarCantidad(): void { this.cantidadAVender.update(c => c+1); }
-decrementarCantidad(): void { this.cantidadAVender.update(c => c-1); }
+decrementarCantidad(): void { this.cantidadAVender.update(c => Math.max(1, c - 1)); }
 venderUnidad(id: number): void { this.productoService.venderUnidad(id); }
 eliminarProducto(id: number): void{ this.productoService.eliminarProducto(id); }
 
