@@ -5,3 +5,7 @@
 .producto-bajo{
     background-color: #ffe9b3;
 }
+
+.resaltado {
+    outline: 2px dashed orange;
+}

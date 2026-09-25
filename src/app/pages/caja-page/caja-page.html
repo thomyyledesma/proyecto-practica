@@ -6,10 +6,10 @@
         <small>{{ mov.fecha | date:'short' }}</small>
         @switch (mov.tipo){
         @case ('venta') {
-        <span>Venta de {{ mov.cantidad }} unidades - ${{ mov.monto | currency }}</span>
+        <span>Venta de {{ mov.cantidad }} unidades - {{ mov.monto | currency }}</span>
         }
         @case ('compra') {
-        <span>Compra de {{ mov.cantidad }} unidades - ${{ mov.monto | currency }}</span>
+        <span>Compra de {{ mov.cantidad }} unidades - {{ mov.monto | currency }}</span>
         }
         @case ('ajuste') {
         <span>Ajuste de stock: {{ mov.cantidad }} unidades</span>

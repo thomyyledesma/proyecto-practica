@@ -1,8 +1,7 @@
-<li [class.producto-agotado]="producto().stock === 0"
-    [class.producto-bajo]="producto().stock > 0 && producto().stock <= 15">
+<li [ngClass]="clases()" [resaltarBajoStock]="producto().stock">
     <h3>{{ producto().nombre }}</h3>
     <p>Precio: {{ producto().precio | currency }}</p>
-    <p>Stock: {{ producto().stock }}</p>
+    <p>Stock: {{ producto().stock}} - {{ producto().stock | estadoStock }}</p>
     @if (producto().stock === 0) {
     <p class="agotado">Sin stock</p>
     }
