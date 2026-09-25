@@ -23,4 +23,9 @@ export class ProductoService {
   eliminarProducto(id: number): void {
     this.productoSignal.update((lista) => lista.filter((p) => p.id !== id));
   }
+
+  agregarProducto(datos: Omit<Producto, 'id'>): void {
+    const nuevoId = Math.max(0, ...this.productoSignal().map(p => p.id)) +1;
+    this.productoSignal.update(lista => [...lista, { id: nuevoId, ...datos }]);
+  }
 }

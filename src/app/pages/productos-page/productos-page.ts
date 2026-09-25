@@ -1,9 +1,10 @@
 import { Component, inject, signal, computed, linkedSignal, importProvidersFrom } from '@angular/core';
 import { ProductoService } from '../../services/producto.service';
 import { ProductoItem } from '../../producto-item/producto-item.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [ProductoItem],
+  imports: [ProductoItem, RouterLink],
   selector: 'app-productos-page',
   styleUrl: './productos-page.css',
   templateUrl: './productos-page.html',

@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
+import { CurrencyPipe, DatePipe } from '@angular/common';
 import { CajaService } from '../../services/caja.service';
 
 @Component({
-  imports: [],
+  imports: [CurrencyPipe, DatePipe],
   selector: 'app-caja-page',
   styleUrl: './caja-page.css',
   templateUrl: './caja-page.html',

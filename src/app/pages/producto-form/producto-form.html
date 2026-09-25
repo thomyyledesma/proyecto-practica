@@ -1,0 +1,27 @@
+<h2>Nuevo producto</h2>
+<form [formGroup]="form" (ngSubmit)="guardar()">
+    <label>
+        Nombre
+        <input type="text" formControlName="nombre" />
+    </label>
+    @if (form.controls.nombre.invalid && form.controls.nombre.touched) {
+        <p class="error">El nombre es obligatorio (minimo 2 caracteres0).</p>
+    }
+
+    <label>
+        Precio
+        <input type="number" formControlName="precio" />
+    </label>
+    @if(form.controls.precio.invalid && form.controls.precio.touched) {
+        <p class="error">El precio tiene que ser 0 o mayor.</p>
+    }
+
+    <label>
+        <input type="number" formControlName="stock" />
+    </label>
+    @if(form.controls.stock.invalid && form.controls.stock.touched){
+        <p class="error">El stock tiene que ser 0 o mayor.</p>
+    }
+
+    <button type="submit" [disabled]="form.invalid">Guardar Producto</button>
+</form>
